@@ -8,14 +8,14 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  var primerObjeto = {
+  var obj = {
     nombre: nombre,
     edad: edad,
     meow: function () {
       return "Meow!";
     },
   };
-  return primerObjeto;
+  return obj;
 }
 
 function agregarPropiedad(objeto, property) {
@@ -39,8 +39,9 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  objetoMisterioso.numeroMisterioso = objetoMisterioso.numeroMisterioso * 5;
-  return objetoMisterioso.numeroMisterioso;
+  objetoMisterioso["numeroMisterioso"] =
+    objetoMisterioso["numeroMisterioso"] * 5;
+  return objetoMisterioso["numeroMisterioso"];
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -56,7 +57,7 @@ function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  var obj = {
+  obj = {
     nombre: nombre,
     email: email,
     password: password,
@@ -92,7 +93,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (usuario["password"] === password) {
+  if (password === usuario["password"]) {
     return true;
   } else {
     return false;
